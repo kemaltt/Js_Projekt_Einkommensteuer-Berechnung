@@ -35,15 +35,6 @@ const checkLabel = () => {
     }
 }
 
-// const calculate = () => {
-//     console.log(jahr.value);
-//     if (jahr.value == '2021') {
-
-//     }
-// }
-
-
-
 // für 2021 ein Gehalt
 const calculate = () => {
 
@@ -160,6 +151,61 @@ const calculate = () => {
         }
 
 
+    } else if (jahr.value == '2019') {
+        if (radioGrund.checked) {
+            let inputZveOne = Number(inputZvE.value);
+            if (inputZveOne < 9168) {
+                outputEst.innerHTML = `0 €`;
+                outputNetto.innerHTML = `${inputZveOne} €`
+            } else if (9169 <= inputZveOne && inputZveOne <= 14254) {
+                let y = (inputZveOne - 9168) / 10000;
+                outputEst.innerHTML = Math.floor((980.14 * y + 1400) * y) + ' €';
+                let out = Math.floor((980.14 * y + 1400) * y);
+                outputNetto.innerHTML = inputZveOne - out + ' €';
+            } else if (14555 <= inputZveOne && inputZveOne <= 55960) {
+                let z = (inputZveOne - 14254) / 10000;
+                outputEst.innerHTML = Math.floor((216.16 * z + 2397) * z + 965.58) + ' €';
+                let out2 = Math.floor((216.16 * z + 2397) * z + 965.58);
+                outputNetto.innerHTML = inputZveOne - out2 + ' €';
+            } else if (55961 < inputZveOne && inputZveOne <= 265326) {
+                outputEst.innerHTML = Math.floor((0.42 * inputZveOne - 8780.90)) + ' €';
+                let out3 = Math.floor((0.42 * inputZveOne - 8780.90));
+                outputNetto.innerHTML = inputZveOne - out3 + ' €';
+
+            } else if (inputZveOne > 265327) {
+                outputEst.innerHTML = Math.floor(0.45 * inputZveOne - 16740.68) + ' €';
+                let out4 = Math.floor(0.45 * inputZveOne - 16740.68);
+                outputNetto.innerHTML = inputZveOne - out4 + ' €';
+            }
+        } else if (radioEhe.checked) {
+
+            let zvE2 = (Number(inputZvE.value) + Number(input2ZvE.value)) / 2;
+            console.log(zvE2);
+            if (zvE2 < 9168) {
+                outputEst.innerHTML = `0 €`;
+                outputNetto.innerHTML = `${zvE2} €`
+            } else if (9169 <= zvE2 && zvE2 <= 14254) {
+                let y = (zvE2 - 9168) / 10000;
+                outputEst.innerHTML = (Math.floor((980.14 * y + 1400) * y)) * 2 + ' €';
+                let out = (Math.floor(980.14 * y + 1400) * y) * 2;
+                outputNetto.innerHTML = zvE2 * 2 - out + ' €';
+            } else if (14555 <= zvE2 && zvE2 <= 55960) {
+                let z = (zvE2 - 14254) / 10000;
+                outputEst.innerHTML = (Math.floor((216.16 * z + 2397) * z + 965.58)) * 2 + ' €';
+                let out2 = (Math.floor((216.16 * z + 2397) * z + 965.58)) * 2;
+                outputNetto.innerHTML = zvE2 * 2 - out2 + ' €';
+            } else if (55961 < zvE2 && zvE2 <= 265326) {
+                outputEst.innerHTML = (Math.floor((0.42 * zvE2 - 8780.90))) * 2 + ' €';
+                let out3 = (Math.floor((0.42 * zvE2 - 8780.90))) * 2;
+                outputNetto.innerHTML = zvE2 * 2 - out3 + ' €';
+
+            } else if (zvE2 > 265327) {
+                outputEst.innerHTML = (Math.floor(0.45 * zvE2 - 16740.68)) * 2 + ' €';
+                let out4 = (Math.floor(0.45 * zvE2 - 16740.68)) * 2;
+                outputNetto.innerHTML = zvE2 * 2 - out4 + ' €';
+            }
+
+        }
     }
 
 
