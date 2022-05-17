@@ -64,3 +64,8 @@ button {
 button:active {
     background-color: rgb(76, 76, 220);
 }
+
+p {
+    height: 30px;
+    padding: 1vh 0;
+}
