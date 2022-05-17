@@ -1,3 +1,66 @@
-/* #div-hidden {
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: antiquewhite;
+}
+
+section {
+    margin: 5vh auto;
+    box-shadow: 0 0 20px black;
+    width: 40vw;
+    padding: 30px;
+    text-align: center;
+    background: aliceblue;
+    border-radius: 20px;
+}
+
+div {
+    padding: 2vh 5vw;
+}
+
+.one {
+    background: skyblue;
+    border-radius: 20px;
+    margin: 2vh 0;
+}
+
+.one label:nth-of-type(1) {
+    margin-right: 8vw;
+}
+
+.einkommen {
+    padding: 0;
+    background: lightblue;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+    text-align: left;
+}
+
+#div-hidden {
     display: none;
-} */
+}
+
+.three {
+    background: skyblue;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+}
+
+button {
+    padding: 5px 15px;
+    background-color: navy;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+button:active {
+    background-color: rgb(76, 76, 220);
+}

@@ -1,26 +1,9 @@
-// / ein Einkommen
-// x < 9744
-// 9744 <= x && x <= 14754
-// 14754 <= x && x <= 57918
-// 57918 <= x && x <= 274612
-// x > 274612
-
-
-// Zwei Einkommen 
-//     (x + y) / 2 < 9744
-// 9744 <= x && x <= 14754
-// 14754 <= x && x <= 57918
-// 57918 <= x && x <= 274612
-// x > 274612
-
 let inputZvE = document.getElementById('input-zve');
 let input2ZvE = document.getElementById('input-zwei-zve');
 let outputEst = document.getElementById('output-est');
 let outputNetto = document.getElementById('output-nettoeinkommen');
-
 let radioGrund = document.getElementById('radio-grundtarif');
 let radioEhe = document.getElementById('radio-ehetarif');
-
 let divHidden = document.getElementById('div-hidden');
 let jahr = document.getElementById('berechnuns-jahr')
 
@@ -35,11 +18,15 @@ const checkLabel = () => {
     }
 }
 
-// für 2021 ein Gehalt
 const calculate = () => {
+    if (inputZvE.value == '' || radioEhe.checked && inputZvE.value == '' || radioEhe.checked && input2ZvE.value == '') {
+        alert('Gib bitte einen Wert ein!');
+        outputEst.innerHTML = '';
+        outputNetto.innerHTML = '';
+        return
+    }
 
-
-    if (jahr.value == '2021') {
+    if (jahr.value == '2021') { // für 2021 ein Gehalt---------------------------------------------------
         if (radioGrund.checked) {
             let inputZveOne = Number(inputZvE.value);
             if (inputZveOne < 9744) {
@@ -65,7 +52,7 @@ const calculate = () => {
                 let out4 = Math.floor(0.45 * inputZveOne - 17374.99);
                 outputNetto.innerHTML = inputZveOne - out4 + ' €';
             }
-        } else if (radioEhe.checked) {
+        } else if (radioEhe.checked) { //zweites Gehalt für 2021 --------------------------------------------
 
             let zvE2 = (Number(inputZvE.value) + Number(input2ZvE.value)) / 2;
             console.log(zvE2);
@@ -94,7 +81,7 @@ const calculate = () => {
             }
 
         }
-    } else if (jahr.value == '2020') {
+    } else if (jahr.value == '2020') { // für 2020 ein Gehalt-----------------------------------------------------
         if (radioGrund.checked) {
             let inputZveOne = Number(inputZvE.value);
             if (inputZveOne < 9408) {
@@ -120,7 +107,7 @@ const calculate = () => {
                 let out4 = Math.floor(0.45 * inputZveOne - 17078.74);
                 outputNetto.innerHTML = inputZveOne - out4 + ' €';
             }
-        } else if (radioEhe.checked) {
+        } else if (radioEhe.checked) { //zweites Gehalt für 2020 --------------------------------------------
 
             let zvE2 = (Number(inputZvE.value) + Number(input2ZvE.value)) / 2;
             console.log(zvE2);
@@ -151,7 +138,7 @@ const calculate = () => {
         }
 
 
-    } else if (jahr.value == '2019') {
+    } else if (jahr.value == '2019') { // für 2019 ein Gehalt-----------------------------------------------------
         if (radioGrund.checked) {
             let inputZveOne = Number(inputZvE.value);
             if (inputZveOne < 9168) {
@@ -177,7 +164,7 @@ const calculate = () => {
                 let out4 = Math.floor(0.45 * inputZveOne - 16740.68);
                 outputNetto.innerHTML = inputZveOne - out4 + ' €';
             }
-        } else if (radioEhe.checked) {
+        } else if (radioEhe.checked) { //zweites Gehalt für 2019 --------------------------------------------
 
             let zvE2 = (Number(inputZvE.value) + Number(input2ZvE.value)) / 2;
             console.log(zvE2);
