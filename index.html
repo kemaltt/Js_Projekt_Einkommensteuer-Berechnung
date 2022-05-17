@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+
+        <div>
+            <input type="radio" name="radio" id="radio-grundtarif" onchange="checkLabel()" checked>
+            <label for="">Grundtarif</label>
+            <input type="radio" name="radio" id="radio-ehetarif" onchange="checkLabel()">
+            <label for="">Ehegattensplitting</label>
+
+        </div>
+        <div>
+            <label for="">zu versteuerndes Einkommen</label>
+            <input type="number" name="number" min="0" id="input-zve">
+
+            <div id="div-hidden">
+                <label for="">zweites Einkommen</label>
+                <input type="number" name="number" min="0" id="input-zwei-zve">
+            </div>
+
+        </div>
+
+        <label for="">Berechnunsjahr</label>
+        <select name="" id="berechnuns-jahr" onclick="calculate()">
+            <option id="berechnuns-jahr" value="2019">2019</option>
+            <option id="berechnuns-jahr" value="2020">2020</option>
+            <option id="berechnuns-jahr" value="2021">2021</option>
+        </select>
+
+
+
+        <button onclick="calculate()">berechnen</button>
+
+        <h4>zu zahlende Steuern</h4>
+        <p id="output-est">
+
+        </p>
+
+        <h4>Nettoeinkommen</h4>
+        <p id="output-nettoeinkommen">
+
+        </p>
+
+
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
