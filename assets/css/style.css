@@ -40,6 +40,13 @@ div {
     text-align: left;
 }
 
+.einkommen input,
+select {
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+}
+
 #div-hidden {
     display: none;
 }
@@ -51,7 +58,7 @@ div {
 }
 
 button {
-    padding: 5px 15px;
+    padding: 10px 20px;
     background-color: navy;
     color: #fff;
     font-size: 1.2rem;
@@ -68,4 +75,6 @@ button:active {
 p {
     height: 30px;
     padding: 1vh 0;
+    color: tomato;
+    font-size: 1.3rem;
 }

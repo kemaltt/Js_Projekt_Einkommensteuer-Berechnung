@@ -13,17 +13,21 @@ let jahr = document.getElementById('berechnuns-jahr')
 const checkLabel = () => {
     if (radioGrund.checked) {
         divHidden.style.display = 'none'
+        inputZvE.value = ''
     } else {
         divHidden.style.display = 'block'
+        input2ZvE.value = ''
+        inputZvE.value = ''
     }
 }
+
 
 const calculate = () => {
     if (inputZvE.value == '' || radioEhe.checked && inputZvE.value == '' || radioEhe.checked && input2ZvE.value == '') {
         alert('Gib bitte einen Wert ein!');
         outputEst.innerHTML = '';
         outputNetto.innerHTML = '';
-        return
+        return 0
     }
 
     if (jahr.value == '2021') { // für 2021 ein Gehalt---------------------------------------------------
@@ -194,8 +198,5 @@ const calculate = () => {
 
         }
     }
-
-
-
 
 }

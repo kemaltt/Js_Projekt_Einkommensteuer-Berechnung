@@ -22,34 +22,32 @@
 
         <div class="einkommen">
             <div class="two">
-                <label for="">zu versteuerndes Einkommen</label>
-                <input type="number" name="number" min="0" id="input-zve">
+                <label for="">zu versteuerndes Einkommen :</label>
+                <input type="number" name="number" min="0" id="input-zve" placeholder="€">
             </div>
 
             <div id="div-hidden">
-                <label for="">zweites Einkommen</label>
-                <input type="number" name="number" min="0" id="input-zwei-zve">
+                <label for="">zweites Einkommen :</label>
+                <input type="number" name="number" min="0" id="input-zwei-zve" placeholder="€">
             </div>
         </div>
 
 
         <div class="three">
             <label for="">Berechnunsjahr</label>
-            <select name="" id="berechnuns-jahr" onclick="calculate()">
-                <option id="berechnuns-jahr" value="2019">2019</option>
-                <option id="berechnuns-jahr" value="2020">2020</option>
-                <option id="berechnuns-jahr" value="2021">2021</option>
+            <select name="" id="berechnuns-jahr">
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
             </select>
         </div>
 
-
-
         <button onclick="calculate()">berechnen</button>
 
-        <h4>zu zahlende Steuern</h4>
+        <h4>zu zahlende Steuern :</h4>
         <p id="output-est"></p>
 
-        <h4>Nettoeinkommen</h4>
+        <h4>Nettoeinkommen :</h4>
         <p id="output-nettoeinkommen"></p>
 
 
